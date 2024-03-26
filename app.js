@@ -2,6 +2,8 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import userRoutes from './src/routes/user.routes.js';
+import postRoutes from './src/routes/post.routes.js';
+import commentRoutes from './src/routes/comment.routes.js';
 
 const app = express();
 
@@ -14,5 +16,7 @@ app.use(
 app.use(express.json());
 
 app.use("/api", userRoutes);
+app.use("/api", commentRoutes);
+app.use("/api", postRoutes);
 
 export default app;
