@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema(
         password: {type: String, required: true},
         name: { type: String, required: true },
         username: { type: String, required: true, unique: true },
-        profile_image: { type: Buffer },
+        profile_image: { type: String },
         quantity_post: { type: Number, default: 0 },
         followed: { type: Number, default: 0 },
         followers: { type: Number, default: 0 },

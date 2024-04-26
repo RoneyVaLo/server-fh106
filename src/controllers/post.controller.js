@@ -7,12 +7,12 @@ export const createPost = async (req, res) => {
         const newPost = new Post({
             images,
             description,
-            id_user
+            user: id_user
         });
 
         const postSaved = await newPost.save();
 
-        res.status(201).json({ postSaved });
+        res.status(201).json(postSaved);
     } catch (error) {
         return res.status(500).json({ message: error.message });
     }
@@ -60,7 +60,7 @@ export const getPosts = async (req, res) => {
             res.json(posts);
         } else {
             res.status(404);
-            console.log('Error mientras se consultaba el Post');
+            console.log('Error mientras se consultan los Posts');
             res.json({ error: 'Error mientras se consultaba el Post' });
         }
     } catch (error) {
